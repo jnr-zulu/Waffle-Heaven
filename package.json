@@ -2,9 +2,9 @@
   "name": "waffle-heaven",
   "version": "1.0.0",
   "scripts": {
-    "dev": "nodemon api/server.js",
-    "build": "npm install",
-    "start": "node api/server.js"
+    "dev": "vite", 
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "helmet": "^7.0.0",

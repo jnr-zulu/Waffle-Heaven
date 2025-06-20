@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Waffle Heaven</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="js/menu.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="main-nav">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/waffle-heaven-logo.png" alt="Waffle Heaven Logo">
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html" class="active">Menu</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
+                    <li><a href="order.html" class="btn-primary">Order Online</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="page-hero" style="background-image: url('images/menu-hero.jpg');">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Our Menu</h1>
+                    <p>Discover our delicious selection of sweet and savory waffles</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Navigation -->
+        <section class="category-nav">
+            <div class="container">
+                <div class="category-filters">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="sweet">Sweet Waffles</button>
+                    <button class="category-btn" data-category="savory">Savory Waffles</button>
+                    <button class="category-btn" data-category="specials">Signature Specials</button>
+                    <button class="category-btn" data-category="beverages">Beverages</button>
+                    <button class="category-btn" data-category="sides">Sides</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Items -->
+        <section class="menu-section">
+            <div class="container">
+                <div class="menu-grid" id="menuItems">
+                    <!-- Sweet Waffles -->
+                    <div class="menu-item" data-category="sweet">
+                        <div class="menu-item-image">
+                            <img src="images/menu/classic-waffle.jpg" alt="Classic Belgian Waffle">
+                            <span class="menu-item-badge bestseller">Bestseller</span>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Classic Belgian Waffle</h3>
+                            <p>Our original Belgian waffle topped with powdered sugar and maple syrup</p>
+                            <div class="menu-item-footer">
+                                <span class="price">R65.00</span>
+                                <button class="add-to-cart" data-id="1">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="sweet">
+                        <div class="menu-item-image">
+                            <img src="images/menu/choc-waffle.jpg" alt="Chocolate Lovers">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Chocolate Lovers</h3>
+                            <p>Chocolate waffle topped with chocolate sauce, chocolate chips and whipped cream</p>
+                            <div class="menu-item-footer">
+                                <span class="price">R85.00</span>
+                                <button class="add-to-cart" data-id="2">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="sweet">
+                        <div class="menu-item-image">
+                            <img src="images/menu/berry-waffle.jpg" alt="Berry Bliss">
+                            <span class="menu-item-badge new">New</span>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Berry Bliss</h3>
+                            <p>Belgian waffle topped with fresh strawberries, blueberries, and raspberry coulis</p>
+                            <div class="menu-item-footer">
+                                <span class="price">R95.00</span>
+                                <button class="add-to-cart" data-id="3">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Savory Waffles -->
+                    <div class="menu-item" data-category="savory">
+                        <div class="menu-item-image">
+                            <img src="images/menu/breakfast-waffle.jpg" alt="Breakfast Waffle">
+                            <span class="menu-item-badge bestseller">Bestseller</span>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Breakfast Waffle</h3>
+                            <p>Savory waffle topped with bacon, fried egg, avocado and hollandaise sauce</p>
+                            <div class="menu-item-footer">
+                                <span class="price">R110.00</span>
+                                <button class="add-to-cart" data-id="4">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="savory">
+                        <div class="menu-item-image">
+                            <img src="images/menu/chicken-waffle.jpg" alt="Chicken & Waffle">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Chicken & Waffle</h3>
+                            <p>Crispy fried chicken on a savory waffle with chili-maple syrup</p>
+                            <div class="menu-item-footer">
+                                <span class="price">R125.00</span>
+                                <button class="add-to-cart" data-id="5">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Signature Specials -->
+                    <div class="menu-item" data-category="specials">
+                        <div class="menu-item-image">
+                            <img src="images/menu/rainbow-waffle.jpg" alt="Rainbow Delight">
+                            <span class="menu-item-badge featured">Featured</span>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Rainbow Delight</h3>
+                            <p>Colorful waffle topped with various fruits, rainbow sprinkles and vanilla ice cream</p>
+                            <div class="menu-item-footer">
+                                <span class="price">R115.00</span>
+                                <button class="add-to-cart" data-id="6">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="specials">
+                        <div class="menu-item-image">
+                            <img src="images/menu/banoffee-waffle.jpg" alt="Banoffee Dream">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Banoffee Dream</h3>
+                            <p>Belgian waffle with banana slices, toffee sauce, whipped cream and crushed biscuits</p>
+                            <div class="menu-item-footer">
+                                <span class="price">R105.00</span>
+                                <button class="add-to-cart" data-id="7">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Beverages -->
+                    <div class="menu-item" data-category="beverages">
+                        <div class="menu-item-image">
+                            <img src="images/menu/milkshake.jpg" alt="Gourmet Milkshake">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Gourmet Milkshake</h3>
+                            <p>Choose from vanilla, chocolate, strawberry or caramel</p>
+                            <div class="menu-item-footer">
+                                <span class="price">R55.00</span>
+                                <button class="add-to-cart" data-id="8">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="beverages">
+                        <div class="menu-item-image">
+                            <img src="images/menu/coffee.jpg" alt="Specialty Coffee">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Specialty Coffee</h3>
+                            <p>Freshly brewed coffee made from locally roasted beans</p>
+                            <div class="menu-item-footer">
+                                <span class="price">R35.00</span>
+                                <button class="add-to-cart" data-id="9">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sides -->
+                    <div class="menu-item" data-category="sides">
+                        <div class="menu-item-image">
+                            <img src="images/menu/fruit-salad.jpg" alt="Fresh Fruit Salad">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Fresh Fruit Salad</h3>
+                            <p>Seasonal fruits cut fresh daily</p>
+                            <div class="menu-item-footer">
+                                <span class="price">R45.00</span>
+                                <button class="add-to-cart" data-id="10">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="sides">
+                        <div class="menu-item-image">
+                            <img src="images/menu/ice-cream.jpg" alt="Premium Ice Cream">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Premium Ice Cream</h3>
+                            <p>Two scoops of artisanal ice cream. Ask for available flavors</p>
+                            <div class="menu-item-footer">
+                                <span class="price">R40.00</span>
+                                <button class="add-to-cart" data-id="11">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dietary Information -->
+        <section class="dietary-info">
+            <div class="container">
+                <h2>Dietary Information</h2>
+                <div class="dietary-grid">
+                    <div class="dietary-item">
+                        <span class="dietary-icon">V</span>
+                        <p>Vegetarian options available</p>
+                    </div>
+                    <div class="dietary-item">
+                        <span class="dietary-icon">GF</span>
+                        <p>Gluten-free waffles available upon request</p>
+                    </div>
+                    <div class="dietary-item">
+                        <span class="dietary-icon">VG</span>
+                        <p>Vegan options available</p>
+                    </div>
+                    <div class="dietary-item">
+                        <span class="dietary-icon">N</span>
+                        <p>Contains nuts</p>
+                    </div>
+                </div>
+                <p class="allergy-notice">Please inform our staff about any allergies or dietary requirements when ordering.</p>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Want to enjoy our waffles at home?</h2>
+                    <p>Place an order online for pickup or delivery</p>
+                    <a href="order.html" class="btn-primary">Order Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/waffle-heaven-logo-white.png" alt="Waffle Heaven Logo">
+                    <p>Indulge in waffle perfection</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="reservations.html">Reservations</a></li>
+                        <li><a href="order.html">Order Online</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>123 Waffle Street, Cape Town</p>
+                    <p>Phone: (021) 123-4567</p>
+                    <p>Email: info@wafflehaven.co.za</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Waffle Heaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

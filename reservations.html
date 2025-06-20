@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations - Waffle Heaven</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="js/reservation.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Waffle Heaven Logo">
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle Navigation">
+                    <span class="hamburger"></span>
+                </button>
+                <nav class="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="reservation.html" class="active">Reservations</a></li>
+                        <li><a href="order.html">Order Online</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="account-actions">
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="signup.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-banner">
+            <div class="container">
+                <h1>Make a Reservation</h1>
+                <p>Reserve your table at Waffle Heaven for a delightful dining experience</p>
+            </div>
+        </section>
+
+        <section class="reservation-section">
+            <div class="container">
+                <div class="section-intro">
+                    <h2>Book Your Table</h2>
+                    <p>We look forward to serving you and making your visit special. Please fill out the form below to reserve your table.</p>
+                </div>
+
+                <div class="reservation-content">
+                    <div class="reservation-info">
+                        <div class="info-card">
+                            <h3>Reservation Guidelines</h3>
+                            <ul class="guidelines-list">
+                                <li>Reservations can be made up to 30 days in advance</li>
+                                <li>Please arrive 10 minutes before your reservation time</li>
+                                <li>For parties larger than 8, please call us directly</li>
+                                <li>Your table will be held for 15 minutes after your reservation time</li>
+                                <li>Special requests are accommodated based on availability</li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <h3>Hours of Operation</h3>
+                            <ul class="hours-list">
+                                <li><span>Monday - Thursday:</span> 8:00 AM - 9:00 PM</li>
+                                <li><span>Friday - Saturday:</span> 8:00 AM - 11:00 PM</li>
+                                <li><span>Sunday:</span> 9:00 AM - 8:00 PM</li>
+                            </ul>
+                            <p class="note">Last reservation accepted 1 hour before closing</p>
+                        </div>
+                    </div>
+
+                    <div class="reservation-form-container">
+                        <form id="reservationForm" class="reservation-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="name">Full Name <span class="required">*</span></label>
+                                    <input type="text" id="name" name="name" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number <span class="required">*</span></label>
+                                    <input type="tel" id="phone" name="phone" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="date">Date <span class="required">*</span></label>
+                                    <input type="date" id="date" name="date" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="time">Time <span class="required">*</span></label>
+                                    <input type="time" id="time" name="time" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="guests">Number of Guests <span class="required">*</span></label>
+                                    <select id="guests" name="guests" class="form-control" required>
+                                        <option value="">Select</option>
+                                        <option value="1">1 Person</option>
+                                        <option value="2">2 People</option>
+                                        <option value="3">3 People</option>
+                                        <option value="4">4 People</option>
+                                        <option value="5">5 People</option>
+                                        <option value="6">6 People</option>
+                                        <option value="7">7 People</option>
+                                        <option value="8">8 People</option>
+                                    </select>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="occasion">Special Occasion (Optional)</label>
+                                    <select id="occasion" name="occasion" class="form-control">
+                                        <option value="">Select if applicable</option>
+                                        <option value="birthday">Birthday</option>
+                                        <option value="anniversary">Anniversary</option>
+                                        <option value="business">Business Meeting</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="requests">Special Requests (Optional)</label>
+                                    <textarea id="requests" name="requests" class="form-control" rows="4"></textarea>
+                                </div>
+                                <div class="form-group full-width terms-group">
+                                    <input type="checkbox" id="terms" name="terms" required>
+                                    <label for="terms">I agree to the reservation <a href="terms.html">terms and conditions</a> <span class="required">*</span></label>
+                                </div>
+                                <div class="form-group full-width">
+                                    <button type="submit" class="btn btn-primary submit-btn">Reserve Table</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>Is there a fee for reservations?</h3>
+                        <p>No, reservations are completely free of charge. However, for no-shows or cancellations less than 2 hours before the reservation time, we reserve the right to note this in our system.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I request a specific table?</h3>
+                        <p>You can mention your preference in the special requests field, and we'll do our best to accommodate based on availability, but specific tables cannot be guaranteed.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How long can we stay at our table?</h3>
+                        <p>For parties of 2-4, tables are reserved for up to 2 hours. For larger parties, tables are reserved for up to 2.5 hours. If you need more time, please let us know in advance.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Do you have high chairs for children?</h3>
+                        <p>Yes, we have high chairs and booster seats available. Please mention this in your special requests when making a reservation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo-white.png" alt="Waffle Heaven Logo">
+                    <p>Delicious waffles and more since 2015</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="reservation.html">Reservations</a></li>
+                        <li><a href="order.html">Order Online</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <address>
+                        123 Waffle Street<br>
+                        Pretoria, South Africa<br>
+                        Phone: <a href="tel:+27123456789">+27 12 345 6789</a><br>
+                        Email: <a href="mailto:info@wafflehaven.co.za">info@wafflehaven.co.za</a>
+                    </address>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com/waffleheavenza" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/waffleheavenza" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/waffleheavenza" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Waffle Heaven. All rights reserved.</p>
+                <ul class="footer-legal">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Reservation Confirmation Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Reservation Confirmed!</h2>
+            </div>
+            <div class="modal-body">
+                <p>Thank you for your reservation at Waffle Heaven. We've sent a confirmation email to your address with all the details.</p>
+                <div class="reservation-details">
+                    <h3>Reservation Details</h3>
+                    <p><strong>Confirmation Number:</strong> <span id="confirmationNumber"></span></p>
+                    <p><strong>Date:</strong> <span id="confirmDate"></span></p>
+                    <p><strong>Time:</strong> <span id="confirmTime"></span></p>
+                    <p><strong>Number of Guests:</strong> <span id="confirmGuests"></span></p>
+                </div>
+                <p class="note">Need to make changes? You can modify or cancel your reservation up to 2 hours before your scheduled time.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="printConfirmation" class="btn btn-outline">Print Confirmation</button>
+                <button id="closeConfirmation" class="btn btn-primary">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

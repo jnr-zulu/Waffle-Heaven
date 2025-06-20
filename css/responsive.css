@@ -1,0 +1,390 @@
+/* responsive.css - Waffle Heaven Restaurant */
+
+/* Base styles and variables */
+:root {
+  --primary-color: #f8b400;
+  --secondary-color: #5c3c10;
+  --accent-color: #e94f37;
+  --light-color: #f9f9f9;
+  --dark-color: #333;
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Playfair Display', serif;
+}
+
+/* Global responsive styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile First Approach */
+
+/* Small devices (phones, 576px and down) */
+@media only screen and (max-width: 576px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+  
+  /* Header & Navigation */
+  .nav-toggle {
+    display: block;
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 80%;
+    height: 100vh;
+    background-color: var(--light-color);
+    transition: all 0.3s ease;
+    z-index: 100;
+  }
+  
+  .main-nav.active {
+    left: 0;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .nav-links li {
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  /* Hero section */
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  /* Menu section */
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  /* Order form */
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Footer */
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-links, .footer-social {
+    margin-top: 20px;
+  }
+}
+
+/* Medium devices (tablets, 577px to 768px) */
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
+  
+  /* Header & Navigation */
+  .nav-toggle {
+    display: block;
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 60%;
+    height: 100vh;
+    background-color: var(--light-color);
+    transition: all 0.3s ease;
+    z-index: 100;
+  }
+  
+  .main-nav.active {
+    left: 0;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+  }
+  
+  /* Hero section */
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  /* Menu section */
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  /* Testimonials */
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Reservation form */
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Large devices (laptops/desktops, 769px to 992px) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  /* Navigation */
+  .nav-toggle {
+    display: none;
+  }
+  
+  .main-nav {
+    position: relative;
+    left: 0;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+  }
+  
+  .nav-links {
+    flex-direction: row;
+  }
+  
+  /* Menu section */
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  /* About section */
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 993px and up) */
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Navigation */
+  .nav-toggle {
+    display: none;
+  }
+  
+  .main-nav {
+    position: relative;
+    left: 0;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+  }
+  
+  .nav-links {
+    flex-direction: row;
+  }
+  
+  /* Hero section */
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+  
+  /* Menu section */
+  .menu-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+  
+  /* About section */
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+  }
+  
+  /* Testimonials */
+  .testimonial-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  
+  /* Order and Reservation form */
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+/* Print styles for order receipts and reservations */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  
+  .print-section, .print-section * {
+    visibility: visible;
+  }
+  
+  .print-section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  
+  .no-print {
+    display: none;
+  }
+  
+  header, footer, .sidebar, nav {
+    display: none;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --light-color: #222;
+    --dark-color: #f9f9f9;
+  }
+  
+  body {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+  }
+  
+  .card, .form-control {
+    background-color: #333;
+    color: var(--dark-color);
+  }
+  
+  .nav-links a {
+    color: var(--dark-color);
+  }
+}
+
+/* Helper classes for responsive design */
+.d-none {
+  display: none !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+@media (min-width: 576px) {
+  .d-sm-none {
+    display: none !important;
+  }
+  
+  .d-sm-block {
+    display: block !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .d-md-none {
+    display: none !important;
+  }
+  
+  .d-md-block {
+    display: block !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .d-lg-none {
+    display: none !important;
+  }
+  
+  .d-lg-block {
+    display: block !important;
+  }
+}
+
+/* Responsive table styles for order history */
+@media (max-width: 768px) {
+  .responsive-table {
+    border: 0;
+  }
+  
+  .responsive-table caption {
+    font-size: 1.3rem;
+  }
+  
+  .responsive-table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  .responsive-table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625rem;
+  }
+  
+  .responsive-table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8rem;
+    text-align: right;
+  }
+  
+  .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .responsive-table td:last-child {
+    border-bottom: 0;
+  }
+}

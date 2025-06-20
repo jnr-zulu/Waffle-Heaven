@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Online - Waffle Heaven</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="js/menu.js" defer></script>
+    <script src="js/order.js" defer></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/waffle-heaven-logo.png" alt="Waffle Heaven Logo">
+                    </a>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle Navigation">
+                    <span class="hamburger"></span>
+                </button>
+                <nav class="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="order-online.html" class="active">Order Online</a></li>
+                        <li><a href="reservations.html">Reservations</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="cart-icon">
+                    <a href="#cart" id="cart-button">
+                        <span class="cart-count" id="cart-count">0</span>
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section" style="background-image: url('images/order-hero-bg.jpg');">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Order Waffles Online</h1>
+                    <p>Satisfy your waffle cravings with just a few clicks!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="order-process">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-icon">1</div>
+                        <h3>Choose Your Waffles</h3>
+                        <p>Browse our menu and select your favorite waffles</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">2</div>
+                        <h3>Customize Your Order</h3>
+                        <p>Add toppings, sides, and beverages</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">3</div>
+                        <h3>Place Your Order</h3>
+                        <p>Confirm your details and submit your order</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">4</div>
+                        <h3>Enjoy!</h3>
+                        <p>Pick up your order or wait for delivery</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <div class="container">
+                <h2 class="section-title">Our Menu</h2>
+                
+                <div class="category-filter">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="sweet">Sweet</button>
+                    <button class="filter-btn" data-category="savory">Savory</button>
+                    <button class="filter-btn" data-category="signature">Signature</button>
+                    <button class="filter-btn" data-category="drinks">Drinks</button>
+                </div>
+                
+                <div class="menu-grid" id="menu-items">
+                    <!-- Menu items will be loaded dynamically from menu.js -->
+                    <!-- Loading spinner that will be replaced once data loads -->
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                        <p>Loading menu items...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cart-section" id="cart">
+            <div class="container">
+                <h2 class="section-title">Your Order</h2>
+                <div class="cart-container">
+                    <div class="cart-items" id="cart-items">
+                        <p class="empty-cart-message">Your cart is empty. Add some delicious waffles!</p>
+                        <!-- Cart items will be added dynamically -->
+                    </div>
+                    <div class="cart-summary">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="cart-subtotal">R0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Delivery Fee:</span>
+                            <span id="delivery-fee">R0.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span id="cart-total">R0.00</span>
+                        </div>
+                        <button class="btn btn-primary btn-block" id="checkout-btn" disabled>Proceed to Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="checkout-section" id="checkout">
+            <div class="container">
+                <h2 class="section-title">Checkout</h2>
+                <form id="checkout-form" class="form-grid">
+                    <div class="form-section">
+                        <h3>Delivery Details</h3>
+                        <div class="form-group">
+                            <label for="delivery-option">Delivery Option</label>
+                            <select id="delivery-option" name="delivery-option" required>
+                                <option value="delivery">Delivery</option>
+                                <option value="pickup">Pickup</option>
+                            </select>
+                        </div>
+                        
+                        <div id="delivery-fields">
+                            <div class="form-group">
+                                <label for="address">Street Address</label>
+                                <input type="text" id="address" name="address" placeholder="123 Waffle Street">
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" name="city" placeholder="Cape Town">
+                            </div>
+                            <div class="form-group">
+                                <label for="postal-code">Postal Code</label>
+                                <input type="text" id="postal-code" name="postal-code" placeholder="8001">
+                            </div>
+                        </div>
+                        
+                        <div id="pickup-fields" style="display: none;">
+                            <div class="form-group">
+                                <label for="pickup-time">Pickup Time</label>
+                                <input type="time" id="pickup-time" name="pickup-time" min="08:00" max="21:00">
+                                <small>Our store is open from 8:00 AM to 9:00 PM</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Contact Information</h3>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="071 234 5678" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section payment-section">
+                        <h3>Payment Information</h3>
+                        <div class="payment-options">
+                            <div class="payment-option">
+                                <input type="radio" id="payment-cash" name="payment-method" value="cash" checked>
+                                <label for="payment-cash">Cash on Delivery/Pickup</label>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" id="payment-card" name="payment-method" value="card">
+                                <label for="payment-card">Credit/Debit Card</label>
+                            </div>
+                        </div>
+                        
+                        <div id="card-fields" style="display: none;">
+                            <div class="form-group">
+                                <label for="card-number">Card Number</label>
+                                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiry-date">Expiry Date</label>
+                                    <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="123">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="card-name">Name on Card</label>
+                                <input type="text" id="card-name" name="card-name" placeholder="Your Name">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="back-to-cart-btn">Back to Cart</button>
+                        <button type="submit" class="btn btn-primary" id="place-order-btn">Place Order</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="order-confirmation" id="order-confirmation" style="display: none;">
+            <div class="container">
+                <div class="confirmation-content">
+                    <div class="check-mark">✓</div>
+                    <h2>Thank You for Your Order!</h2>
+                    <p>Your order has been received and is being processed.</p>
+                    <div class="order-details">
+                        <h3>Order Details</h3>
+                        <p><strong>Order Number:</strong> <span id="order-number"></span></p>
+                        <p><strong>Estimated Delivery/Pickup Time:</strong> <span id="estimated-time"></span></p>
+                    </div>
+                    <p class="confirmation-message">A confirmation has been sent to your email address. You can track your order status in the email.</p>
+                    <a href="index.html" class="btn btn-primary">Return to Home</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/waffle-heaven-logo-white.png" alt="Waffle Heaven Logo">
+                    <p>Deliciously crafted waffles for every occasion</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="order-online.html">Order Online</a></li>
+                        <li><a href="reservations.html">Reservations</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Waffle Street, Cape Town, 8001</p>
+                    <p><i class="fas fa-phone"></i> (021) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@wafflehaven.co.za</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Waffle Heaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

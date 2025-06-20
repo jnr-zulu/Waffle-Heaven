@@ -4,7 +4,7 @@
 # Build settings
 
 [build]
-  command = "npm install vite --save-dev && npm run build"
+  command = "npm run build"
   publish = "dist"
 
   # Directory where your built files are located
